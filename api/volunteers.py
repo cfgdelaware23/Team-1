@@ -1,19 +1,30 @@
-from flask import Flask, Blueprint, request
+from flask import Flask, Blueprint, request, Response
 from Scheduler import *
 
 volunteer_api = Blueprint('volunteers', __name__)
 
 def get_volunteer_info():
-    volunteer_hours = []
-    schedule = getSchedule()
-    for event in schedule:
-        event_info = event[0]
-        volunteers = event[1]
-        
-        for v in volunteers:
-            volunteer_hours[v[0]] = volunteer_hours.get((v[0], 0) + 1)
-    return volunteer_hours
+    
+    volunteer_hours = {}
+    schedule = get_schedule()
+    for day in schedule:
+        for event in schedule[day]:
+            host = event[2]
 
+            if host not in volunteer_hours:
+                volunteer_hours[host] = 0
+            volunteer_hours[host] += 1
+            
+            partner = schedule[day][event]
+            if partner not in volunteer_hours:
+                volunteer_hours[partner] = 0
+
+            volunteer_hours[partner]+=1
+            
+    return volunteer_hours
+                
+                
+                
 @volunteer_api.route("/", methods = ['GET'])
 def show_volunteer_info():
     return Response(get_volunteer_info(), status=200)
