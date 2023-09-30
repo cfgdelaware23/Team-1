@@ -36,6 +36,8 @@ function App() {
               <p className="event-date"> Monday, October 2</p>
               <p className="event-time"> 12pm - 2pm</p>
             </div>
+            <div className="events"> </div>
+
             <Search />
             <Routes>
               <Route path="/form" component={Form} />
