@@ -37,6 +37,7 @@ def show_volunteer_info():
 
 @volunteer_api.route("/one/<name>", methods = ['GET'])
 def show_one_volunteer_info(name):
+    name.replace(" ", "%20")
     # name = request.args
     # print(name)
     volunteer_hours = get_volunteer_info()
