@@ -9,7 +9,11 @@ schedule_api = Blueprint('schedule', __name__)
 
 @schedule_api.route("/", methods = ['GET'])
 def get_schedule():
-    return "GET Schedule"
+    
+    df1 = jsonToPandas("events_api")
+    df2 = jsonToPandas("hosts_api")
+    dayhash = getDayHash(df1)
+    return getSchedule(dayhash, df2)
 
 def jsonToPandas(var_name):
 
@@ -78,10 +82,10 @@ def getSchedule(dayHash, availDf):
 
 
     
-df1 = jsonToPandas("events_api")
-df2 = jsonToPandas("hosts_api")
-dayhash = getDayHash(df1)
-print(getSchedule(dayhash,df2))
+# df1 = jsonToPandas("events_api")
+# df2 = jsonToPandas("hosts_api")
+# dayhash = getDayHash(df1)
+# print(getSchedule(dayhash,df2))
 # print(dayhash)
 # print(df["event_name"])
 # for ind in df.index:
