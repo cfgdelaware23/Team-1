@@ -46,6 +46,7 @@ function App() {
             <div className='search-section'>
               <SearchBar />
             </div>
+            <h2> Volunteer Hours </h2>
             <div className="volunteer-hours">
             <table>
                 <tr>
