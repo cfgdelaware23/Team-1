@@ -19,8 +19,8 @@ const surveyJson = {
     title: "Title:",
     type: "text"
   }, {
-    name: "Time",
-    title: "Account:",
+    name: "Zoom Account ID",
+    title: "Zoom Account ID:",
     type: "text"
   }]
 };
