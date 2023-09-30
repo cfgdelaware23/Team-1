@@ -9,7 +9,6 @@ const Search = (events, setEvents) => {
   /* When state changes are applied, the render method gets called again with the new state */
   const [showResults, setShowResults] = React.useState(false);
   const onClick = () => setShowResults(true);
-
   function updateEvents() {
     axios
       .get("/schedule")

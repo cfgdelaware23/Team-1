@@ -13,14 +13,12 @@ function App() {
   const [events, setEvents] = useState([]);
 
   return (
-    <Router>
-      <div className="App">
-        <div class="title">
-          <h1 className="h1-spanned"> Upcoming Events </h1>
-        </div>
-        <div className="flexbox-container">
-          <EventList />
-          <Search />
+    <div className="flexbox-container">
+      <Router>
+        <div className="App">
+          <h1> Upcoming Events </h1>
+          <EventList events={events} setEvents={setEvents} />
+          <Search events={events} setEvents={setEvents} />
           <Routes>
             <Route path="/form" component={Form} />
             <Route path="/redirect" component={RedirectComponent} />
@@ -29,8 +27,8 @@ function App() {
             <SearchBar />
           </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 
