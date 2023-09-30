@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 /* Update the state of the component in the click handler by utilizing setState */
 const Search = () => {
-  /* When state changes are applied, the render method gets called again with the new state */
+/* When state changes are applied, the render method gets called again with the new state */
   const [showResults, setShowResults] = React.useState(false)
   const onClick = () => setShowResults(true)
   return (
         <div>
-      <input type="submit" value="Add Events" onClick={onClick} style={{backgroundColor: "#e3faff", width: "150px", height: "100px", borderRadius: "15px", fontFamily: "Roboto", fontWeight: "bold", fontSize: "27px"}}/>
+      <input type="submit" value="Add Events" onClick={onClick} style={{backgroundColor: "#e3faff", width: "150px", height: "100px", borderRadius: "15px", fontFamily: "Roboto", fontWeight: "bold", fontSize: "27px", ariaLabel: "Add Events"}}/>
       { showResults ? <Form /> : null }
     </div>
   )
