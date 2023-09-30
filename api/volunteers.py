@@ -6,7 +6,13 @@ volunteer_api = Blueprint('volunteers', __name__)
 def get_volunteer_info():
     
     volunteer_hours = {}
-    schedule = get_schedule()
+    df1 = jsonToPandas("events_api")
+    df2 = jsonToPandas("hosts_api")
+    dayhash = getDayHash(df1)
+    schedule = getSchedule(dayhash, df2)
+    # schedule = get_schedule().get_data()
+    # print(schedule)
+
     for day in schedule:
         for event in schedule[day]:
             host = event[2]
@@ -27,15 +33,18 @@ def get_volunteer_info():
                 
 @volunteer_api.route("/", methods = ['GET'])
 def show_volunteer_info():
-    return Response(get_volunteer_info(), status=200)
+    return jsonify(get_volunteer_info())
 
 @volunteer_api.route("/one/<name>", methods = ['GET'])
 def show_one_volunteer_info(name):
-    name = request.args.get('name')
+    # name = request.args
+    # print(name)
     volunteer_hours = get_volunteer_info()
+    # print("here")
     if name in volunteer_hours:
-        return Response(volunteer_hours[name], status=200)
+        return jsonify(volunteer_hours[name])
     return Response({"error": "Volunteer Not Found"}, 404)
+
     
     
 
