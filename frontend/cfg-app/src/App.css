@@ -5,11 +5,8 @@
   flex-direction: column;
   align-items: center;
 }
-.App {
-  background-color: white;
-  height: 100px;
-  width: 200px;
-
+h1 {
+  text-align: center;
 }
 
 .search-section {
@@ -23,6 +20,12 @@
   background-color: white;
 }
 
+.h1-spanned {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
 
 
 @media (prefers-reduced-motion: no-preference) {
@@ -31,6 +34,15 @@
   }
 }
 
+.title {
+  margin-right: 20px;
+}
+
+.events-section {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1px 10px 0px 10px;
+}
 
 
 
