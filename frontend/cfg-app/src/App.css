@@ -67,3 +67,16 @@ th {
   border:1px solid black;
   padding: 10px;
 }
+.event-1{
+  align-items: center;
+  justify-items: center;
+  border: 1px solid black;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.event-2{
+  border: 1px solid black;
+}
+.event-3{
+  border: 1px solid black;
+}
