@@ -30,10 +30,10 @@ def show_volunteer_info():
     return Response(get_volunteer_info(), status=200)
 
 @volunteer_api.route("/one/<name>", methods = ['GET'])
-def show_one_volunteer_info():
+def show_one_volunteer_info(name):
     name = request.args.get('name')
     volunteer_hours = get_volunteer_info()
-    if (volunteer_hours.has_key(name)):
+    if name in volunteer_hours:
         return Response(volunteer_hours[name], status=200)
     return Response({"error": "Volunteer Not Found"}, 404)
     
