@@ -30,7 +30,7 @@ def show_volunteer_info():
     return Response(get_volunteer_info(), status=200)
 
 @volunteer_api.route("/one/<name>", methods = ['GET'])
-def show_one_volunteer_info():
+def show_one_volunteer_info(name):
     name = request.args.get('name')
     volunteer_hours = get_volunteer_info()
     if name in volunteer_hours:
