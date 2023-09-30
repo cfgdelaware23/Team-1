@@ -12,22 +12,24 @@ import RedirectComponent from './components/RedirectComponent.js'
 
 function App() {
   return (
-    <div className='flexbox-container'>
-  <Router>
-      <div className="App">
-        <h1> Upcoming Events </h1>
-          <EventList />
-          <Search />
-          <Routes>
-            <Route path="/form" component={Form} />
-            <Route path="/redirect" component={RedirectComponent} />
-          </Routes>
-          <div className='search-section'>
-            <SearchBar />
+    <Router>
+        <div className="App">
+          <div class="title">
+            <h1 className='h1-spanned'> Upcoming Events </h1>
           </div>
-      </div>
-  </Router>
-  </div>
+          <div className='flexbox-container'>
+            <EventList />
+            <Search />
+            <Routes>
+              <Route path="/form" component={Form} />
+              <Route path="/redirect" component={RedirectComponent} />
+            </Routes>
+            <div className='search-section'>
+              <SearchBar />
+            </div>
+        </div>
+        </div>
+    </Router>
   );
 }
 

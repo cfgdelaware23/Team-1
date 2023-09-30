@@ -9,6 +9,7 @@
     align-items: end;
     justify-items: flex-end;
     box-shadow: 5px 5px 5px white;
+    margin-top: 20px;
 }
 
 input {
