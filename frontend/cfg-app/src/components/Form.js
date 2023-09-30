@@ -15,7 +15,7 @@ const surveyJson = {
     title: "Time:",
     type: "text"
   }, {
-    name: "Time",
+    name: "Title",
     title: "Title:",
     type: "text"
   }, {
