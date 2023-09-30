@@ -5,21 +5,22 @@ import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 
 const surveyJson = {
+  // Form inputs
   elements: [{
     name: "Day",
-    title: "Enter the day:",
+    title: "Day:",
     type: "text"
   }, {
     name: "Time",
-    title: "Enter the time:",
+    title: "Time:",
     type: "text"
   }, {
     name: "Time",
-    title: "Enter the title:",
+    title: "Title:",
     type: "text"
   }, {
     name: "Time",
-    title: "Enter the account:",
+    title: "Account:",
     type: "text"
   }]
 };
