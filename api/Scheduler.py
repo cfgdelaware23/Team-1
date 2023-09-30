@@ -82,7 +82,7 @@ def getSchedule(dayHash, availDf):
 
 
 
-    
+print(get_schedule())
 # df1 = jsonToPandas("events_api")
 # df2 = jsonToPandas("hosts_api")
 # dayhash = getDayHash(df1)
