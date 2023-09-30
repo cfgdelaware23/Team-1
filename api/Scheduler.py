@@ -14,6 +14,7 @@ def get_schedule():
 def jsonToPandas(var_name):
 
     env_vals = dotenv_values("variables.env")
+    # print(env_vals.keys())
     file_name = env_vals[var_name]
     with urllib.request.urlopen(file_name) as url:
         raw_data = json.load(url)
