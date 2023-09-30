@@ -33,7 +33,7 @@ def show_volunteer_info():
 def show_one_volunteer_info():
     name = request.args.get('name')
     volunteer_hours = get_volunteer_info()
-    if (volunteer_hours.has_key(name)):
+    if name in volunteer_hours:
         return Response(volunteer_hours[name], status=200)
     return Response({"error": "Volunteer Not Found"}, 404)
     

@@ -2,7 +2,7 @@ import json
 import pandas as pd
 from dotenv import dotenv_values
 import urllib.request
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, Response
 import numpy as np
 
 schedule_api = Blueprint('schedule', __name__)
@@ -13,7 +13,7 @@ def get_schedule():
     df1 = jsonToPandas("events_api")
     df2 = jsonToPandas("hosts_api")
     dayhash = getDayHash(df1)
-    return getSchedule(dayhash, df2)
+    return Response(getSchedule(dayhash, df2), status=200)
 
 def jsonToPandas(var_name):
 
@@ -81,7 +81,7 @@ def getSchedule(dayHash, availDf):
 
 
 
-print(get_schedule())
+# print(get_schedule())
 # df1 = jsonToPandas("events_api")
 # df2 = jsonToPandas("hosts_api")
 # dayhash = getDayHash(df1)
