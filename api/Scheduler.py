@@ -22,7 +22,6 @@ def jsonToPandas(var_name):
     file_name = env_vals[var_name]
     with urllib.request.urlopen(file_name) as url:
         raw_data = json.load(url)
-    # print(raw_data)
     return pd.json_normalize(raw_data["data"])
     
 def getDayHash(df):
